@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:music_app/AudioPlayerWithLocalAsset.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,19 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: TextButton(
-              onPressed: () {
-                final player = AudioCache();
-                player.play('A Sky Full of Stars.mp3');
-              },
-              child: Text('Play'),
-            ),
-          ),
-        ),
-      ),
+      home: AudioPlayerWithLocalAsset(),
     );
   }
 }
